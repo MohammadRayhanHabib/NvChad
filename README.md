@@ -14,7 +14,7 @@ Remove local/state and local/share
 rm -rf ~/.local/state/nvim
 rm -rf ~/.local/share/nvim
 ```
-Or this already configured version
+Clone this already configured version
 ```
 git clone https://github.com/MohammadRayhanHabib/NvChad.git ~/.config/nvim && nvim
 ```
