@@ -4,7 +4,7 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require("lspconfig")
 
--- list of all servers configured.
+-- List of all servers configured.
 lspconfig.servers = {
     "lua_ls",
     "clangd",
@@ -22,14 +22,14 @@ lspconfig.servers = {
     "yamlls", -- YAML
 }
 
--- list of servers configured with default config.
+-- List of servers configured with default config.
 local default_servers = {
     "pyright",
     "ts_ls",
     "html",
     "cssls",
     "emmet_ls",
-    "tailwindcss",
+    "tailwindcss", -- Tailwind CSS server
     "eslint",
     "jsonls",
     "prismals",
@@ -38,7 +38,7 @@ local default_servers = {
     "yamlls",
 }
 
--- lsps with default config
+-- LSPs with default config
 for _, lsp in ipairs(default_servers) do
     lspconfig[lsp].setup({
         on_attach = on_attach,
@@ -94,6 +94,30 @@ lspconfig.emmet_ls.setup({
             options = {
                 ["bem.enabled"] = true,
             },
+        },
+    },
+})
+
+-- Specific setup for tailwindcss (for JS, TS, JSX, TSX files)
+lspconfig.tailwindcss.setup({
+    on_attach = on_attach,
+    on_init = on_init,
+    capabilities = capabilities,
+    filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact", "html", "css" },
+    init_options = {
+        userExtensions = {
+            ".jsx",
+            ".tsx",
+            ".js",
+            ".ts",
+            ".html",
+            ".css",
+        },
+        includeLanguages = {
+            javascript = "html",
+            typescript = "html",
+            javascriptreact = "html",
+            typescriptreact = "html",
         },
     },
 })
