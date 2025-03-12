@@ -1,3 +1,7 @@
+![image](https://github.com/user-attachments/assets/86e0691a-b1dc-45f6-9e83-23ad75806d28)
+![image](https://github.com/user-attachments/assets/f1a0421c-39a7-4c1e-a4cc-82c6e787708a)
+![image](https://github.com/user-attachments/assets/d04ad8cc-efa6-428c-8164-27fd0b52bffc)
+
 # NvChad Custom Configuration
 
 This repository contains my custom configuration for NvChad.
