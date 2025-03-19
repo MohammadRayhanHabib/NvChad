@@ -144,6 +144,15 @@ return {
         end,
     },
 
+{
+    "roobert/tailwindcss-colorizer-cmp.nvim",
+    event = "VeryLazy",
+    config = function()
+        require("tailwindcss-colorizer-cmp").setup({
+            color_square_width = 2, -- Adjust the size of the color preview in autocomplete
+        })
+    end,
+},
     -- 🎨 Tailwind Autocomplete Color Preview (Optional)
     -- {
     --     "roobert/tailwindcss-colorizer-cmp.nvim",
